@@ -1,6 +1,5 @@
-#!/bin/bash
-
-while IFS=":" read -r username _ uid _ _ _ home _
-do
-  echo "$username:$uid:$home"
+#!/usr/bin/env bash
+# This script is displaying read and cut
+while IFS=: read -r username _ userid _ _ homedir _; do
+    echo "$username:$userid:$homedir"
 done < /etc/passwd
