@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying bash pid
+for pid in /proc/[0-9]*; do
+    cmdline=$(cat "$pid/comm" 2>/dev/null)
+    if echo "$cmdline" | grep -q "bash"; then
+        echo "$(basename "$pid") $cmdline"
+    fi
+done
+
