@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying stopping code
-pkill -f 4-to_infinity_and_beyond
+# Stops 4-to_infinity_and_beyond process without using kill or killall
+
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+[ -n "$pid" ] && echo "q" > /proc/$pid/fd/0
