@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script is displaying process and no file
+PID_FILE="/var/run/myscript.pid"
+
+# Create the PID file
+echo $$ > "$PID_FILE"
+
+# Trap SIGINT (Ctrl+C)
+trap 'echo "Y U no love me?!"' SIGINT
+
+# Trap SIGTERM: show message but keep running
+trap 'echo "I hate the kill command"' SIGTERM
+
+# Trap SIGQUIT and clean up (SIGQUIT = Ctrl+\)
+trap 'rm -f "$PID_FILE"; exit' SIGQUIT
+
+# Also clean up on SIGTERM when *explicitly* asked to exit
+trap 'rm -f "$PID_FILE"; exit' EXIT
+
+# Infinite loop
+while true
+do
+    echo "To infinity and beyond"
+    sleep 1
+done
