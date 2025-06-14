@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # This script is displaying the running process
-ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest
+ps -axo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest | sed '1 s/^.*$/USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND/'
