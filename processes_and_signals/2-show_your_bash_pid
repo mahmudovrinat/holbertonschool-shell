@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is displaying bash pid
+# shellcheck disable=SC2009
+ps -f | awk '/bash/ && !/awk/ {print}'
