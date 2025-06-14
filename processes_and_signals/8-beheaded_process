@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script is displaying beheaded procces
+pkill -9 -f 7-highlander
