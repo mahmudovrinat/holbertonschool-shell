@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# This script is displaying the running process
-ps -axo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest | sed '1 s/^.*$/USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND/'
+
+# Display all running processes in a user-oriented format with hierarchy
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
