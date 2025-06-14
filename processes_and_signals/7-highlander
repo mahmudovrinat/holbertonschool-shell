@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying highlander
+# Define a trap for SIGTERM
+trap "echo 'I am invincible!!!'" SIGTERM
+
+# Infinite loop
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
