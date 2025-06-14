@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Display all running processes in a user-oriented format with hierarchy
-ps -ejH -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
+ps auxf
+
